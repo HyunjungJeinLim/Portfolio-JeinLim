@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Bitter', serif; 
+  font-family: 'Bitter', serif;
   background: black;
   color: white;
   overflow-x: hidden;
@@ -22,14 +22,6 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.neon-text {
-  font-size: 3rem;
-  color: white;
-  text-shadow: 0 0 8px #00ffc3;
-  position: relative;
-  z-index: 2;
 }
 
 #intro.glow-card::after {
@@ -93,7 +85,6 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  /* background: #fefaf6; */
   background: black;
   display: none;
   justify-content: center;
@@ -109,6 +100,8 @@ body {
   display: flex;
   gap: 2rem;
   list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #navbar a {
@@ -141,9 +134,8 @@ body {
 }
 
 #navbar a:hover::after {
-  transform: scaleX(0); /* 밑줄 숨김 */
+  transform: scaleX(0);
 }
-
 
 .section {
   padding: 4rem 2rem;
@@ -157,6 +149,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 2rem;
 }
+
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -285,28 +278,6 @@ body {
   filter: drop-shadow(0 0 8px #00ffc3);
 }
 
-.icon-with-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #f4a261;
-  font-weight: bold;
-  font-family: 'Bitter', serif;
-  transition: transform 0.3s ease;
-}
-
-.icon-with-label img {
-  height: 56px;
-  margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 4px #00ffc3);
-}
-
-.icon-with-label:hover {
-  transform: scale(1.05);
-  color: black;
-}
-
 #contact {
   opacity: 0;
   transform: translateY(60px);
@@ -330,7 +301,6 @@ body {
   position: relative;
   width: 220px;
   flex-shrink: 0;
-  left: -60px; 
 }
 
 .avatar-eyes {
@@ -374,8 +344,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 0.5rem;         
-  
+  margin-top: 0.5rem;
 }
 
 .side-form button:hover {
@@ -383,14 +352,31 @@ body {
   color: black;
 }
 
-
 @media (max-width: 768px) {
   .contact-horizontal {
     flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .contact-image-wrapper {
+    left: 0;
+  }
+
+  .avatar-eyes {
+    width: 100%;
   }
 
   .side-form {
+    width: 90%;
+    max-width: 340px;
     align-items: center;
+  }
+
+  .side-form input,
+  .side-form textarea,
+  .side-form button {
+    width: 100%;
   }
 }
 
