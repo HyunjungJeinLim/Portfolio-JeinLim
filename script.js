@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeLetter();
 
-  window.dispatchEvent(new Event('scroll')); // reveal 강제 트리거
+  window.dispatchEvent(new Event('scroll')); 
 });
 
 window.addEventListener("scroll", () => {
@@ -35,13 +35,14 @@ window.addEventListener("scroll", () => {
     indicator.classList.remove("hide");
   }
 
-  // reveal 다시 작동하도록 수정
   document.querySelectorAll(".reveal").forEach((el) => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
       el.classList.add("visible");
     } else {
-      el.classList.remove("visible"); // 뷰포트 벗어나면 다시 제거
+      el.classList.remove("visible"); 
     }
   });
 });
+
+document.getElementById("year").textContent = new Date().getFullYear();

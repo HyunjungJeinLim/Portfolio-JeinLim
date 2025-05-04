@@ -240,12 +240,10 @@ body {
   overflow: hidden;
 }
 
-/* 밑줄 제거 */
 .download-btn .underline {
   text-decoration: none;
 }
 
-/* 형광펜 효과 배경 */
 .download-btn::before {
   content: "";
   position: absolute;
@@ -253,14 +251,13 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(244, 162, 97, 0.3); /* 살구색 형광펜 느낌 */
+  background: rgba(244, 162, 97, 0.3); 
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
   z-index: -1;
 }
 
-/* hover 시 형광펜 배경 나타남 */
 .download-btn:hover::before {
   transform: scaleX(1);
 }
@@ -416,4 +413,14 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+#site-footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+  color: #f4a261; 
+  background-color: transparent;
+  font-family: 'Bitter', serif;
+  text-shadow: 0 0 4px #00ffc3;
 }
