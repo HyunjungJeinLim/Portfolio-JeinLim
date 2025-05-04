@@ -1,11 +1,83 @@
+/* === Global === */
 body {
   margin: 0;
   font-family: 'Bitter', serif;
   background: black;
   color: white;
   overflow-x: hidden;
+  padding-top: 70px; 
 }
 
+/* === Navbar === */
+#navbar {
+  display: none; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: black;
+  justify-content: center;
+  padding: 1rem 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 255, 195, 0.2);
+}
+
+#navbar.show {
+  display: flex; 
+}
+
+#navbar ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#navbar a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: 'Bitter', serif;
+  transition: all 0.3s ease;
+}
+
+#navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  width: 100%;
+  height: 0.7em;
+  background: #f4a261;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  border-radius: 2px;
+}
+
+#navbar a:hover {
+  color: #00ffc3;
+  text-shadow: 0 0 6px #00ffc3, 0 0 10px #00ffc3;
+}
+
+#navbar a:hover::after {
+  transform: scaleX(0);
+}
+
+/* === Responsive Navbar === */
+@media screen and (max-width: 600px) {
+  #navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* === Neon Text === */
 .neon-text {
   font-family: 'Satisfy', cursive;
   font-size: 3rem;
@@ -15,6 +87,7 @@ body {
   z-index: 2;
 }
 
+/* === Intro Glow === */
 .intro-section {
   height: 100vh;
   display: flex;
@@ -60,6 +133,7 @@ body {
   opacity: 1;
 }
 
+/* === Scroll Indicator === */
 .scroll-indicator {
   position: fixed;
   bottom: 2rem;
@@ -81,62 +155,7 @@ body {
   50% { opacity: 0; }
 }
 
-#navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: black;
-  display: none;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 100;
-}
-
-#navbar.show {
-  display: flex;
-}
-
-#navbar ul {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#navbar a {
-  position: relative;
-  text-decoration: none;
-  color: rgb(252, 252, 252);
-  font-weight: bold;
-  font-family: 'Bitter', serif;
-  transition: all 0.3s ease;
-}
-
-#navbar a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0.1em;
-  width: 100%;
-  height: 0.7em;
-  background: #f4a261;
-  z-index: -1;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  border-radius: 2px;
-}
-
-#navbar a:hover {
-  color: #00ffc3;
-  text-shadow: 0 0 6px #00ffc3, 0 0 10px #00ffc3;
-}
-
-#navbar a:hover::after {
-  transform: scaleX(0);
-}
-
+/* === Section Styling === */
 .section {
   padding: 4rem 2rem;
 }
@@ -150,6 +169,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* === Skills Grid === */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -167,6 +187,7 @@ body {
   transform: scale(1.1);
 }
 
+/* === Project Cards === */
 .project-cards {
   display: flex;
   flex-wrap: wrap;
@@ -217,6 +238,7 @@ body {
   transform: scaleX(1);
 }
 
+/* === Download Button === */
 .download-btn {
   position: relative;
   display: inline-block;
@@ -233,10 +255,6 @@ body {
   overflow: hidden;
 }
 
-.download-btn .underline {
-  text-decoration: none;
-}
-
 .download-btn::before {
   content: "";
   position: absolute;
@@ -244,7 +262,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(244, 162, 97, 0.3); 
+  background: rgba(244, 162, 97, 0.3);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -259,6 +277,7 @@ body {
   text-align: center;
 }
 
+/* === Contact Section === */
 .contact-links {
   display: flex;
   justify-content: center;
@@ -309,6 +328,7 @@ body {
   filter: none;
 }
 
+/* === Contact Form === */
 .side-form {
   width: 320px;
   display: flex;
@@ -352,34 +372,7 @@ body {
   color: black;
 }
 
-@media (max-width: 768px) {
-  .contact-horizontal {
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .contact-image-wrapper {
-    left: 0;
-  }
-
-  .avatar-eyes {
-    width: 100%;
-  }
-
-  .side-form {
-    width: 90%;
-    max-width: 340px;
-    align-items: center;
-  }
-
-  .side-form input,
-  .side-form textarea,
-  .side-form button {
-    width: 100%;
-  }
-}
-
+/* === Animations === */
 @keyframes blink {
   0%, 90%, 100% { transform: scaleY(1); }
   95% { transform: scaleY(0.1); }
@@ -401,11 +394,12 @@ body {
   transform: translateY(0);
 }
 
+/* === Footer === */
 #site-footer {
   text-align: center;
   padding: 1rem 0;
   font-size: 0.8rem;
-  color: #f4a261; 
+  color: #f4a261;
   background-color: transparent;
   font-family: 'Bitter', serif;
   text-shadow: 0 0 4px #00ffc3;
