@@ -333,7 +333,7 @@ body {
   width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .side-form input,
@@ -393,6 +393,33 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+@media screen and (max-width: 768px) {
+  .contact-horizontal {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .contact-image-wrapper {
+    width: 180px; 
+  }
+
+  .avatar-eyes {
+    width: 100%;  
+
+  .side-form {
+    width: 90%;
+    max-width: 340px;
+    align-items: center;
+  }
+
+  .side-form input,
+  .side-form textarea,
+  .side-form button {
+    width: 100%;
+  }
+}}
 
 /* === Footer === */
 #site-footer {
